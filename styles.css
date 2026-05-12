@@ -202,6 +202,8 @@ p { margin: 0 0 1rem; color: var(--text-soft); }
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid transparent;
   transition: background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  /* room reserved on the right for the pinned theme toggle */
+  --toggle-reserve: 84px;
 }
 .navbar.scrolled {
   background: var(--nav-bg-scrolled, rgba(255, 255, 255, 0.95));
@@ -213,14 +215,14 @@ p { margin: 0 0 1rem; color: var(--text-soft); }
   --nav-bg-scrolled: rgba(10, 18, 36, 0.92);
 }
 .nav-container {
-  max-width: var(--container);
+  max-width: none;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--toggle-reserve) 0 24px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
 }
 .nav-logo {
   display: inline-flex;
@@ -253,41 +255,46 @@ p { margin: 0 0 1rem; color: var(--text-soft); }
   background: rgba(10, 18, 36, 0.92);
 }
 .logo-text { white-space: nowrap; }
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
-}
 .nav-links {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   gap: 0.15rem;
   align-items: center;
   flex-wrap: nowrap;
-  min-width: 0;
+  z-index: 1;
 }
 .theme-toggle {
+  position: fixed;
+  top: calc(var(--nav-h) / 2);
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 60;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: 50%;
   color: var(--brand);
   cursor: pointer;
   padding: 0;
-  transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.2s var(--ease);
+  box-shadow: var(--shadow-md);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.2s var(--ease), box-shadow 0.25s var(--ease);
 }
 .theme-toggle:hover {
   color: var(--white);
   background: var(--brand);
   border-color: var(--brand);
-  transform: translateY(-1px);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: var(--shadow-glow);
 }
-.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle svg { width: 22px; height: 22px; }
 .theme-toggle .icon-sun { display: none; }
 .theme-toggle .icon-moon { display: block; }
 [data-theme="dark"] .theme-toggle { color: #f8c468; }
@@ -1003,36 +1010,39 @@ p { margin: 0 0 1rem; color: var(--text-soft); }
   transform: translateY(0);
 }
 
-/* -------- Navigation: always use hamburger menu (10 links don't fit horizontally) -------- */
-.nav-toggle { display: inline-flex; }
-.nav-links {
-  position: absolute;
-  top: var(--nav-h);
-  left: 0;
-  right: 0;
-  flex-direction: column;
-  align-items: stretch;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 16px 20px;
-  gap: 4px;
-  transform: translateY(-12px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
-  box-shadow: var(--shadow-md);
-  max-height: calc(100vh - var(--nav-h));
-  overflow-y: auto;
-}
-.nav-links.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-.nav-links a {
-  padding: 0.85rem 0.85rem;
-  font-size: 1rem;
-  border-radius: 10px;
+/* -------- Responsive nav: hamburger when desktop nav can't fit -------- */
+@media (max-width: 1366px) {
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px 20px;
+    gap: 4px;
+    margin-left: 0;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+    box-shadow: var(--shadow-md);
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+  }
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-links a {
+    padding: 0.85rem 0.85rem;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: 960px) {
