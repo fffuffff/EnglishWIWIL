@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pre-writing planning template for the English final project on how social media impacts teen mental health." />
+  <title>Pre-Writing Template — How Social Media Impacts Teen Mental Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("teen-sm-theme");
+        if (!t) {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    /* =====================================================
+       Pre-Writing Template
+       Document / worksheet styling on top of styles.css
+       ===================================================== */
+
+    :root {
+      --tpl-paper: #ffffff;
+      --tpl-paper-edge: #e6ecf5;
+      --tpl-rule: #d6dde9;
+      --tpl-label: #475569;
+      --tpl-fill: #0f172a;
+      --tpl-accent: var(--brand);
+      --tpl-soft: #f4f7fc;
+    }
+    [data-theme="dark"] {
+      --tpl-paper: #131e36;
+      --tpl-paper-edge: #1f2d4a;
+      --tpl-rule: #2c3a56;
+      --tpl-label: #94a3b8;
+      --tpl-fill: #e6ecf6;
+      --tpl-soft: #182645;
+    }
+
+    body {
+      background: var(--bg-alt);
+      font-family: 'Inter', sans-serif;
+      color: var(--tpl-fill);
+    }
+
+    /* ----- Top bar ----- */
+    .tpl-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--tpl-paper);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 22px;
+    }
+    .tpl-bar-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .tpl-bar-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--tpl-label);
+      text-transform: uppercase;
+    }
+    .tpl-bar-title::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background: var(--tpl-accent);
+    }
+    .tpl-bar-actions { display: flex; align-items: center; gap: 8px; }
+    .tpl-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--tpl-paper);
+      color: var(--tpl-fill);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .tpl-btn:hover {
+      background: var(--tpl-soft);
+      border-color: var(--tpl-accent);
+    }
+    .tpl-btn svg { width: 14px; height: 14px; }
+
+    /* ----- Page / paper ----- */
+    .tpl-page {
+      max-width: 920px;
+      margin: 28px auto 60px;
+      background: var(--tpl-paper);
+      border: 1px solid var(--tpl-paper-edge);
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(8,23,46,0.04), 0 18px 40px rgba(8,23,46,0.06);
+      overflow: hidden;
+    }
+    [data-theme="dark"] .tpl-page {
+      box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 22px 50px rgba(0,0,0,0.45);
+    }
+
+    /* ----- Document header ----- */
+    .tpl-head {
+      padding: 40px 56px 28px;
+      border-bottom: 1px solid var(--tpl-rule);
+    }
+    .tpl-doc-type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tpl-accent);
+      margin: 0 0 8px;
+    }
+    .tpl-head h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.55rem, 3vw, 2.05rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--tpl-fill);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tpl-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px 28px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--tpl-rule);
+    }
+    .tpl-meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .tpl-meta-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tpl-label);
+    }
+    .tpl-meta-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--tpl-fill);
+    }
+
+    /* ----- Document body ----- */
+    .tpl-body {
+      padding: 36px 56px 56px;
+    }
+    @media (max-width: 700px) {
+      .tpl-head, .tpl-body { padding-left: 24px; padding-right: 24px; }
+    }
+
+    /* ----- Field block ----- */
+    .tpl-field {
+      margin-bottom: 28px;
+    }
+    .tpl-field-label {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .tpl-field-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--tpl-accent);
+      letter-spacing: 0.05em;
+      min-width: 38px;
+    }
+    .tpl-field-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tpl-label);
+    }
+    .tpl-field-fill {
+      margin-left: 48px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--tpl-rule);
+      color: var(--tpl-fill);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .tpl-field-fill p { margin: 0; }
+    .tpl-field-fill p + p { margin-top: 8px; }
+
+    /* ----- Section divider ----- */
+    .tpl-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 44px 0 24px;
+    }
+    .tpl-divider-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      background: var(--tpl-accent);
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+    .tpl-divider-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--tpl-fill);
+      margin: 0;
+    }
+    .tpl-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--tpl-fill);
+    }
+
+    /* ----- Section box (grouped sub-fields) ----- */
+    .tpl-section {
+      border: 1px solid var(--tpl-rule);
+      border-radius: 4px;
+      padding: 0;
+      margin-bottom: 22px;
+      background: var(--tpl-paper);
+    }
+    .tpl-section-head {
+      padding: 12px 18px;
+      background: var(--tpl-soft);
+      border-bottom: 1px solid var(--tpl-rule);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tpl-section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--tpl-accent);
+      background: var(--tpl-paper);
+      padding: 3px 8px;
+      border-radius: 3px;
+      border: 1px solid var(--tpl-rule);
+    }
+    .tpl-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--tpl-fill);
+      margin: 0;
+      flex: 1;
+      min-width: 200px;
+    }
+    .tpl-section-body {
+      padding: 18px 22px 22px;
+    }
+
+    /* ----- Sub-field (label + content inside section) ----- */
+    .tpl-row {
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--tpl-rule);
+    }
+    .tpl-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .tpl-row:first-child { padding-top: 0; }
+    .tpl-row-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--tpl-label);
+      margin-bottom: 8px;
+    }
+    .tpl-row-value {
+      color: var(--tpl-fill);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    /* ----- Lists ----- */
+    .tpl-ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .tpl-ul li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--tpl-fill);
+      line-height: 1.55;
+    }
+    .tpl-ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--tpl-accent);
+      font-weight: 600;
+    }
+
+    .tpl-ol {
+      list-style: none;
+      counter-reset: tpl-counter;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tpl-ol li {
+      counter-increment: tpl-counter;
+      position: relative;
+      padding-left: 32px;
+      color: var(--tpl-fill);
+      line-height: 1.55;
+    }
+    .tpl-ol li::before {
+      content: counter(tpl-counter, decimal-leading-zero) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--tpl-accent);
+    }
+
+    /* ----- Inline tags / chips ----- */
+    .tpl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tpl-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 3px;
+      background: var(--tpl-soft);
+      border: 1px solid var(--tpl-rule);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--tpl-fill);
+    }
+
+    /* ----- Two-column layout inside a section ----- */
+    .tpl-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .tpl-grid-2 > * { padding: 12px 18px; }
+    .tpl-grid-2 > *:first-child {
+      border-right: 1px dashed var(--tpl-rule);
+    }
+    @media (max-width: 700px) {
+      .tpl-grid-2 { grid-template-columns: 1fr; }
+      .tpl-grid-2 > *:first-child {
+        border-right: none;
+        border-bottom: 1px dashed var(--tpl-rule);
+      }
+    }
+
+    /* ----- Footer line / signature line ----- */
+    .tpl-foot {
+      padding: 24px 56px 36px;
+      border-top: 1px solid var(--tpl-rule);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: var(--tpl-label);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 700px) {
+      .tpl-foot { padding-left: 24px; padding-right: 24px; }
+    }
+
+    /* ----- Print ----- */
+    @media print {
+      body { background: #fff; }
+      .tpl-bar { display: none; }
+      .tpl-page {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        max-width: none;
+      }
+      .tpl-section, .tpl-field { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="tpl-bar">
+    <div class="tpl-bar-inner">
+      <span class="tpl-bar-title">Pre-Writing Template</span>
+      <div class="tpl-bar-actions">
+        <button class="tpl-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          Theme
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE / PAPER ===================== -->
+  <article class="tpl-page" aria-label="Pre-writing template">
+
+    <!-- ===================== DOCUMENT HEADER ===================== -->
+    <header class="tpl-head">
+      <p class="tpl-doc-type">Website Pre-Writing · Planning Template</p>
+      <h1>"How Social Media Impacts Teen Mental Health"</h1>
+    </header>
+
+    <!-- ===================== BODY ===================== -->
+    <div class="tpl-body">
+
+      <!-- ========== ESSENTIAL QUESTIONS ========== -->
+      <div class="tpl-divider">
+        <span class="tpl-divider-num">01</span>
+        <h2 class="tpl-divider-title">Essential Questions</h2>
+        <span class="tpl-divider-line"></span>
+      </div>
+
+      <div class="tpl-field">
+        <div class="tpl-field-label">
+          <span class="tpl-field-num">Q1</span>
+          <span class="tpl-field-name">Question</span>
+        </div>
+        <div class="tpl-field-fill"><p>How does social media impact teenagers' mental health?</p></div>
+      </div>
+      <div class="tpl-field">
+        <div class="tpl-field-label">
+          <span class="tpl-field-num">Q2</span>
+          <span class="tpl-field-name">Question</span>
+        </div>
+        <div class="tpl-field-fill"><p>Does increased social media use lead to higher levels of anxiety and depression in teens?</p></div>
+      </div>
+      <div class="tpl-field">
+        <div class="tpl-field-label">
+          <span class="tpl-field-num">Q3</span>
+          <span class="tpl-field-name">Question</span>
+        </div>
+        <div class="tpl-field-fill"><p>What are the positive and negative effects of social media on teen well-being?</p></div>
+      </div>
+
+      <!-- ========== INTRODUCTION / HOMEPAGE ========== -->
+      <div class="tpl-divider">
+        <span class="tpl-divider-num">02</span>
+        <h2 class="tpl-divider-title">Introduction / Homepage</h2>
+        <span class="tpl-divider-line"></span>
+      </div>
+
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">00</span>
+          <h3 class="tpl-section-title">Homepage</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Purpose</span>
+            <div class="tpl-row-value">Introduce the topic and explain why it matters to teenagers today.</div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Main Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Social media is used by most teenagers every day.</li>
+                <li>Apps like TikTok, Instagram, Snapchat, and YouTube are a major part of communication and entertainment.</li>
+                <li>Social media can positively and negatively affect mental health.</li>
+                <li>Teens often do not realize how much social media changes their emotions, confidence, sleep, and stress levels.</li>
+                <li>The website will teach users how social media affects teen mental health and how to build healthier habits online.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Visual Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Hero image of a teenager using a phone</li>
+                <li>Large title banner</li>
+                <li>Navigation buttons</li>
+                <li>Clean modern design with blue / purple color palette</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SITE SECTIONS ========== -->
+      <div class="tpl-divider">
+        <span class="tpl-divider-num">03</span>
+        <h2 class="tpl-divider-title">Site Sections</h2>
+        <span class="tpl-divider-line"></span>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">01</span>
+          <h3 class="tpl-section-title">Why This Topic Matters</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Main Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Teen brains are still developing emotionally and socially.</li>
+                <li>Social media creates constant access to opinions, comparisons, and feedback.</li>
+                <li>Many teens spend several hours a day online.</li>
+                <li>Mental health concerns among teens have increased in recent years.</li>
+                <li>Learning healthy online habits can improve confidence and emotional well-being.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Key Fact</span>
+            <div class="tpl-row-value">
+              Teens who spend more than <strong>3 hours daily</strong> on social media may face increased risks of anxiety and depression.
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Visual Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Statistic cards</li>
+                <li>Infographic showing average screen time</li>
+                <li>Mental health themed graphics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">02</span>
+          <h3 class="tpl-section-title">Positive Effects of Social Media</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Main Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Helps teens stay connected with friends and family.</li>
+                <li>Allows creativity through videos, art, music, and posts.</li>
+                <li>Gives access to support groups and communities.</li>
+                <li>Helps teens express themselves and discover interests.</li>
+                <li>Spreads awareness about important events and causes.</li>
+                <li>Can help shy people communicate more comfortably.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Examples</span>
+            <div class="tpl-row-value">
+              <div class="tpl-tags">
+                <span class="tpl-tag">Group chats</span>
+                <span class="tpl-tag">Educational videos</span>
+                <span class="tpl-tag">Creative communities</span>
+                <span class="tpl-tag">Online support spaces</span>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Visual Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Positive-themed cards / icons</li>
+                <li>Images of teens collaborating or communicating</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">03</span>
+          <h3 class="tpl-section-title">Negative Effects of Social Media</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Main Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Social comparison can lower self-esteem.</li>
+                <li>Filters and edited photos create unrealistic expectations.</li>
+                <li>Cyberbullying can seriously affect emotional health.</li>
+                <li>Addiction to scrolling wastes time and increases stress.</li>
+                <li>Notifications and online pressure can create anxiety.</li>
+                <li>Using phones late at night affects sleep.</li>
+                <li>Harmful content can negatively influence teens.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Examples</span>
+            <div class="tpl-row-value">
+              <div class="tpl-tags">
+                <span class="tpl-tag">Comparing appearance / popularity</span>
+                <span class="tpl-tag">Pressure over likes &amp; followers</span>
+                <span class="tpl-tag">Doomscrolling</span>
+                <span class="tpl-tag">Online harassment</span>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Visual Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Darker contrasting section colors</li>
+                <li>Stress / anxiety graphics</li>
+                <li>Phone notification visuals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">04</span>
+          <h3 class="tpl-section-title">Research and Statistics</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Purpose</span>
+            <div class="tpl-row-value">Show real evidence and research instead of only opinions.</div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Sources Used</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>U.S. Surgeon General</li>
+                <li>Pew Research Center</li>
+                <li>Book source: <em>iGen</em> by Jean Twenge</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Important Statistics</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Most teens use social media daily.</li>
+                <li>Many teens say they are online "almost constantly."</li>
+                <li>YouTube, TikTok, Instagram, and Snapchat are the most popular apps.</li>
+                <li>Increased screen time is linked to higher mental health risks.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Visual Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Charts</li>
+                <li>Animated counters</li>
+                <li>Graphs and percentage visuals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">05</span>
+          <h3 class="tpl-section-title">Interactive Self-Check Activity</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Purpose</span>
+            <div class="tpl-row-value">Help the audience reflect on their own habits.</div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Questions</span>
+            <div class="tpl-row-value">
+              <ol class="tpl-ol">
+                <li>Do I check my phone immediately after waking up?</li>
+                <li>Do I lose track of time while scrolling?</li>
+                <li>Do I compare myself to others online?</li>
+                <li>Do social media interactions affect my mood?</li>
+                <li>Do I use social media late at night?</li>
+              </ol>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Reflection</span>
+            <div class="tpl-row-value">Users will receive a message encouraging healthier habits and awareness.</div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Visual Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Interactive checkboxes</li>
+                <li>Reflection popup / message box</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">06</span>
+          <h3 class="tpl-section-title">Healthy Social Media Habits</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Goal</span>
+            <div class="tpl-row-value">Teach students practical ways to improve their relationship with social media.</div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Main Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Set screen time limits.</li>
+                <li>Avoid scrolling before bed.</li>
+                <li>Turn off unnecessary notifications.</li>
+                <li>Unfollow accounts that create stress.</li>
+                <li>Follow educational or positive creators.</li>
+                <li>Take breaks from apps when needed.</li>
+                <li>Spend time offline with friends and family.</li>
+                <li>Focus on real-life activities and hobbies.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Visual Ideas</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Checklist design</li>
+                <li>Wellness icons</li>
+                <li>Clean bright section styling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">07</span>
+          <h3 class="tpl-section-title">Try It Yourself Activity</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Purpose</span>
+            <div class="tpl-row-value">Encourage real-life application of the information learned.</div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Instructions</span>
+            <div class="tpl-row-value">
+              <ol class="tpl-ol">
+                <li>Check your phone's screen time.</li>
+                <li>Find your most-used app.</li>
+                <li>Reflect on whether it improves or hurts your mood.</li>
+                <li>Create a one-week goal for healthier use.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Goal Example</span>
+            <div class="tpl-row-value">"I will avoid social media after 10 PM for one week."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== CONCLUSION ========== -->
+      <div class="tpl-divider">
+        <span class="tpl-divider-num">04</span>
+        <h2 class="tpl-divider-title">Conclusion</h2>
+        <span class="tpl-divider-line"></span>
+      </div>
+
+      <div class="tpl-field">
+        <div class="tpl-field-label">
+          <span class="tpl-field-num">04a</span>
+          <span class="tpl-field-name">Main Ideas</span>
+        </div>
+        <div class="tpl-field-fill">
+          <ul class="tpl-ul">
+            <li>Social media is not entirely good or bad.</li>
+            <li>The effects depend on how it is used.</li>
+            <li>Awareness and balance are important.</li>
+            <li>Teens should learn to use social media intentionally instead of automatically.</li>
+            <li>Healthy habits can improve mental health and reduce stress.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tpl-field">
+        <div class="tpl-field-label">
+          <span class="tpl-field-num">04b</span>
+          <span class="tpl-field-name">Final Message</span>
+        </div>
+        <div class="tpl-field-fill">
+          <p>The goal is not to stop using technology, but to use it in a healthier and more controlled way.</p>
+        </div>
+      </div>
+
+      <!-- ========== ADDITIONAL RESOURCES ========== -->
+      <div class="tpl-divider">
+        <span class="tpl-divider-num">05</span>
+        <h2 class="tpl-divider-title">Additional Resources</h2>
+        <span class="tpl-divider-line"></span>
+      </div>
+
+      <div class="tpl-field">
+        <div class="tpl-field-label">
+          <span class="tpl-field-num">05</span>
+          <span class="tpl-field-name">Trusted Sources for Further Reading</span>
+        </div>
+        <div class="tpl-field-fill">
+          <ul class="tpl-ul">
+            <li>U.S. Surgeon General</li>
+            <li>Pew Research Center</li>
+            <li>Common Sense Media</li>
+            <li>Mayo Clinic</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========== WORKS CITED ========== -->
+      <div class="tpl-divider">
+        <span class="tpl-divider-num">06</span>
+        <h2 class="tpl-divider-title">Works Cited</h2>
+        <span class="tpl-divider-line"></span>
+      </div>
+
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">06a</span>
+          <h3 class="tpl-section-title">Sources</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Written</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Twenge, Jean M. — <em>iGen</em></li>
+                <li>U.S. Surgeon General article</li>
+                <li>Pew Research Center study</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tpl-row">
+            <span class="tpl-row-label">Image Sources</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Image sources from Pexels and Unsplash</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tpl-section">
+        <div class="tpl-section-head">
+          <span class="tpl-section-tag">06b</span>
+          <h3 class="tpl-section-title">Images Used</h3>
+        </div>
+        <div class="tpl-section-body">
+          <div class="tpl-row">
+            <span class="tpl-row-label">Categories</span>
+            <div class="tpl-row-value">
+              <ul class="tpl-ul">
+                <li>Teen phone usage images</li>
+                <li>Social media themed graphics</li>
+                <li>Mental health illustrations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===================== DOC FOOTER ===================== -->
+    <footer class="tpl-foot">
+      <span>Document · Pre-Writing Template</span>
+      <span>Dresden Cook · <span id="year"></span></span>
+    </footer>
+  </article>
+
+  <script>
+    var yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    (function () {
+      var btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      function apply(theme) {
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        else document.documentElement.removeAttribute('data-theme');
+      }
+      var saved = localStorage.getItem('teen-sm-theme');
+      if (!saved) {
+        saved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      apply(saved);
+      btn.addEventListener('click', function () {
+        var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        var next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('teen-sm-theme', next);
+        apply(next);
+      });
+    })();
+  </script>
+</body>
+</html>
