@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A high school project on how social media impacts teen mental health, including positive effects, negative effects, research, and healthier habits." />
+  <title>How Social Media Impacts Teen Mental Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <script>
+    // Apply saved theme before paint to avoid flash of wrong theme.
+    (function () {
+      try {
+        var t = localStorage.getItem("teen-sm-theme");
+        if (!t) {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Teens &amp; Social Media</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+          <a href="#essential-questions">Questions</a>
+          <a href="#why">Why It Matters</a>
+          <a href="#positive">Positives</a>
+          <a href="#negative">Negatives</a>
+          <a href="#research">Research</a>
+          <a href="#quiz">Self-Check</a>
+          <a href="#habits">Habits</a>
+          <a href="#activity">Try It</a>
+          <a href="#resources">Resources</a>
+          <a href="#works-cited">Works Cited</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">English Final Project</p>
+        <h1>How Social Media Impacts Teen Mental Health</h1>
+        <p class="subtitle">What I wish I had learned in school about using social media in a healthier way.</p>
+        <p class="hero-intro">
+          Social media is part of everyday life for many teenagers. It can help people stay connected,
+          express themselves, and find support, but it can also increase stress, comparison, anxiety,
+          depression, and pressure. This website explains both sides and teaches healthier ways to use social media.
+        </p>
+        <div class="hero-buttons">
+          <a href="#essential-questions" class="btn btn-primary">Start Learning</a>
+          <a href="#works-cited" class="btn btn-ghost">View Works Cited</a>
+        </div>
+      </div>
+      <a href="#essential-questions" class="scroll-indicator" aria-label="Scroll to next section">
+        <span class="scroll-label">Scroll</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ===================== ESSENTIAL QUESTIONS ===================== -->
+    <section class="section" id="essential-questions">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">01 — Driving Inquiry</p>
+          <h2>Essential Questions</h2>
+          <p class="section-lede">The questions guiding this project and the conversation around teens and technology.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card question-card">
+            <div class="card-number">Q1</div>
+            <p>How does social media impact teenagers' mental health?</p>
+          </article>
+          <article class="card question-card">
+            <div class="card-number">Q2</div>
+            <p>Does increased social media use lead to higher levels of anxiety and depression in teens?</p>
+          </article>
+          <article class="card question-card">
+            <div class="card-number">Q3</div>
+            <p>What are the positive and negative effects of social media on teen well-being?</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY THIS MATTERS ===================== -->
+    <section class="section section-alt" id="why">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">02 — Context</p>
+          <h2>Why This Matters</h2>
+        </div>
+        <div class="two-col">
+          <div class="prose">
+            <p>
+              Teenagers are still developing socially, emotionally, and mentally. Because social media is
+              used so often, it can shape how teens see themselves, compare themselves to others, communicate
+              with friends, and spend their time. Understanding these effects helps teens make better
+              choices instead of just using apps automatically.
+            </p>
+          </div>
+          <aside class="callout">
+            <div class="callout-tag">Key Fact</div>
+            <p>
+              According to the U.S. Surgeon General, children and adolescents who spend more than
+              <strong>3 hours a day</strong> on social media face <strong>double the risk</strong> of
+              mental health problems, including symptoms of depression and anxiety.
+            </p>
+            <cite>— U.S. Surgeon General's Advisory, 2023</cite>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== POSITIVE SIDE ===================== -->
+    <section class="section" id="positive">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">03 — The Bright Side</p>
+          <h2>How Social Media Can Help</h2>
+          <p class="section-lede">Social media is not all bad. Used well, it can support real benefits for teens.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card icon-card positive">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Connection</h3>
+            <p>Teens can stay in touch with friends and family, even when they live far apart.</p>
+          </article>
+          <article class="card icon-card positive">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Support</h3>
+            <p>Online communities can help people feel less alone, especially during hard times.</p>
+          </article>
+          <article class="card icon-card positive">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3>Creativity</h3>
+            <p>Teens can share art, music, writing, videos, and ideas with a wider audience.</p>
+          </article>
+          <article class="card icon-card positive">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Self-Expression</h3>
+            <p>Social media can help teens explore identity, interests, and personal style.</p>
+          </article>
+          <article class="card icon-card positive">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3>Awareness</h3>
+            <p>Teens can learn about current events, social issues, and topics they care about.</p>
+          </article>
+          <article class="card icon-card positive accent-card">
+            <h3>The takeaway</h3>
+            <p>When used with intention, social media can build connection, creativity, and learning. The trouble starts when use becomes automatic, late-night, or comparison-driven.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NEGATIVE SIDE ===================== -->
+    <section class="section section-alt" id="negative">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">04 — The Hard Side</p>
+          <h2>How Social Media Can Hurt</h2>
+          <p class="section-lede">Researchers have linked heavy social media use with a long list of mental health risks.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card icon-card negative">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9 6 9-6"/><rect x="3" y="6" width="18" height="12" rx="2"/></svg>
+            </div>
+            <h3>Comparison</h3>
+            <p>Seeing edited or idealized posts can lower self-esteem and distort body image.</p>
+          </article>
+          <article class="card icon-card negative">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Anxiety &amp; Depression</h3>
+            <p>Heavy use may be connected to higher rates of mental health problems in teens.</p>
+          </article>
+          <article class="card icon-card negative">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h3>Cyberbullying</h3>
+            <p>Harmful comments, harassment, or rumors can damage emotional health quickly.</p>
+          </article>
+          <article class="card icon-card negative">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </div>
+            <h3>Sleep Problems</h3>
+            <p>Late-night scrolling can cut into sleep and lower the quality of rest.</p>
+          </article>
+          <article class="card icon-card negative">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l9 9 9-9a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Pressure</h3>
+            <p>Likes, comments, streaks, and follower counts can make teens feel constantly judged.</p>
+          </article>
+          <article class="card icon-card negative">
+            <div class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3>Harmful Content</h3>
+            <p>Teens may be exposed to unsafe, violent, or unhealthy content with little warning.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH SNAPSHOT ===================== -->
+    <section class="section research-section" id="research">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-eyebrow">05 — The Numbers</p>
+          <h2>Research Snapshot</h2>
+          <p class="section-lede">A look at how much teens use social media today, drawn from major U.S. studies.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-number"><span class="counter" data-target="95">0</span><span class="stat-suffix">%</span></div>
+            <p class="stat-label">of youth ages 13–17 report using a social media platform.</p>
+          </div>
+          <div class="stat">
+            <div class="stat-number"><span class="counter" data-target="33">0</span><span class="stat-suffix">%+</span></div>
+            <p class="stat-label">say they use social media <em>almost constantly</em>.</p>
+          </div>
+          <div class="stat">
+            <div class="stat-number"><span class="counter" data-target="35">0</span><span class="stat-suffix">%</span></div>
+            <p class="stat-label">of teens say they use at least one major online platform almost constantly. <small>(Pew Research Center)</small></p>
+          </div>
+          <div class="stat">
+            <div class="stat-number stat-text">YT · TT<br/>IG · SC</div>
+            <p class="stat-label">YouTube, TikTok, Instagram, and Snapchat are among the most common platforms for teens.</p>
+          </div>
+        </div>
+        <p class="research-sources">
+          Sources:
+          <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html" target="_blank" rel="noopener">U.S. Surgeon General</a>
+          ·
+          <a href="https://www.pewresearch.org/internet/2022/08/10/teens-social-media-and-technology-2022/" target="_blank" rel="noopener">Pew Research Center, 2022</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== INTERACTIVE QUIZ ===================== -->
+    <section class="section section-alt" id="quiz">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">06 — Self-Check</p>
+          <h2>Check Your Habits</h2>
+          <p class="section-lede">No grades, no judgment. This is just a quick check-in with yourself.</p>
+        </div>
+        <div class="quiz-card">
+          <p class="quiz-question"><strong>Which of these happen to you?</strong></p>
+          <form id="habitsQuiz" class="quiz-options">
+            <label class="check-option"><input type="checkbox" /><span>I check social media right when I wake up.</span></label>
+            <label class="check-option"><input type="checkbox" /><span>I lose track of time while scrolling.</span></label>
+            <label class="check-option"><input type="checkbox" /><span>I compare myself to people online.</span></label>
+            <label class="check-option"><input type="checkbox" /><span>I feel stressed when posts do not get likes or replies.</span></label>
+            <label class="check-option"><input type="checkbox" /><span>I use social media late at night.</span></label>
+            <label class="check-option"><input type="checkbox" /><span>I feel better after taking breaks from social media.</span></label>
+          </form>
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary" id="reflectBtn">Show Reflection</button>
+            <button type="button" class="btn btn-ghost" id="resetQuizBtn">Reset</button>
+          </div>
+          <div class="reflection" id="reflectionBox" hidden>
+            <p>
+              If you checked several boxes, social media may be affecting your mood, time, or confidence.
+              That does not mean you need to delete everything, but it may help to set boundaries and pay
+              attention to how different apps make you feel.
+            </p>
+            <p class="reflection-count" id="reflectionCount"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HEALTHY HABITS ===================== -->
+    <section class="section" id="habits">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">07 — Healthy Habits</p>
+          <h2>Healthier Ways to Use Social Media</h2>
+          <p class="section-lede">Small changes can make a big difference in how social media feels day to day.</p>
+        </div>
+        <ol class="habit-list">
+          <li><div class="habit-num">1</div><div><h3>Set time limits on apps.</h3><p>Use built-in screen time tools to cap daily app use.</p></div></li>
+          <li><div class="habit-num">2</div><div><h3>Turn off unnecessary notifications.</h3><p>Reduce the number of times your phone pulls your attention.</p></div></li>
+          <li><div class="habit-num">3</div><div><h3>Avoid scrolling right before bed.</h3><p>Protect your sleep so your brain can recover.</p></div></li>
+          <li><div class="habit-num">4</div><div><h3>Unfollow accounts that make you feel worse.</h3><p>You don't owe anyone a follow. Curate your feed on purpose.</p></div></li>
+          <li><div class="habit-num">5</div><div><h3>Follow accounts that teach, inspire, or support you.</h3><p>Fill your feed with people and topics that build you up.</p></div></li>
+          <li><div class="habit-num">6</div><div><h3>Take breaks when social media feels stressful.</h3><p>Even short breaks can reset how you feel.</p></div></li>
+          <li><div class="habit-num">7</div><div><h3>Talk to someone if online experiences are affecting your mental health.</h3><p>A friend, parent, counselor, or trusted adult can help.</p></div></li>
+          <li><div class="habit-num">8</div><div><h3>Remember that posts usually show highlights, not someone's full life.</h3><p>Most feeds are a curated reel, not the full story.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== ACTIVITY ===================== -->
+    <section class="section section-alt" id="activity">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">08 — Try It Yourself</p>
+          <h2>Show, Do, Reflect</h2>
+          <p class="section-lede">A short five-step activity to put what you learned into practice this week.</p>
+        </div>
+        <div class="activity-grid">
+          <ol class="steps">
+            <li><span class="step-num">1</span><div><h3>Open your screen time report.</h3><p>iPhone: Settings → Screen Time. Android: Settings → Digital Wellbeing.</p></div></li>
+            <li><span class="step-num">2</span><div><h3>Find your most-used social media app.</h3><p>Notice which app shows up first.</p></div></li>
+            <li><span class="step-num">3</span><div><h3>Write down how much time you spend on it daily.</h3><p>Be honest. The number is just data, not a grade.</p></div></li>
+            <li><span class="step-num">4</span><div><h3>Ask yourself: "Does this app usually make me feel better, worse, or the same?"</h3><p>Notice your real reaction, not just the highlights.</p></div></li>
+            <li><span class="step-num">5</span><div><h3>Choose one healthy change to try for one week.</h3><p>Just one. Small experiments build real habits.</p></div></li>
+          </ol>
+          <aside class="goal-box">
+            <h3>My One-Week Goal</h3>
+            <p class="goal-prompt">My one-week goal is…</p>
+            <textarea
+              id="goalInput"
+              rows="5"
+              placeholder="Example: This week I will turn off Instagram notifications and stop scrolling after 10 p.m."
+              aria-label="My one-week goal"
+            ></textarea>
+            <div class="goal-actions">
+              <span class="goal-status" id="goalStatus" aria-live="polite">Saved automatically</span>
+              <button type="button" class="btn btn-ghost btn-sm" id="clearGoalBtn">Clear</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONCLUSION ===================== -->
+    <section class="section conclusion-section" id="conclusion">
+      <div class="container">
+        <div class="conclusion-card">
+          <p class="section-eyebrow light">09 — Conclusion</p>
+          <h2>What We Learned</h2>
+          <p>
+            Social media is not completely good or completely bad. Its impact depends on how much time
+            teens spend on it, what they see, how they interact, and how it affects their sleep,
+            confidence, relationships, and emotions. The goal is not to scare people away from
+            technology, but to help teens use it with more awareness and control.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESOURCES ===================== -->
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">10 — Learn More</p>
+          <h2>Additional Resources</h2>
+          <p class="section-lede">Trusted places to keep learning about social media and teen mental health.</p>
+        </div>
+        <div class="grid grid-2">
+          <a class="resource-card" href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html" target="_blank" rel="noopener">
+            <div class="resource-tag">Government Report</div>
+            <h3>U.S. Surgeon General: Social Media and Youth Mental Health</h3>
+            <p>The 2023 advisory on the effects of social media on young people.</p>
+            <span class="resource-link">Visit resource →</span>
+          </a>
+          <a class="resource-card" href="https://www.pewresearch.org/internet/2022/08/10/teens-social-media-and-technology-2022/" target="_blank" rel="noopener">
+            <div class="resource-tag">Research</div>
+            <h3>Pew Research Center: Teens, Social Media and Technology 2022</h3>
+            <p>National survey data on how American teens use technology and social platforms.</p>
+            <span class="resource-link">Visit resource →</span>
+          </a>
+          <a class="resource-card" href="https://www.commonsensemedia.org/articles/social-media" target="_blank" rel="noopener">
+            <div class="resource-tag">Family Guide</div>
+            <h3>Common Sense Media: Social Media and Mental Health</h3>
+            <p>Plain-language guidance for teens, parents, and educators.</p>
+            <span class="resource-link">Visit resource →</span>
+          </a>
+          <a class="resource-card" href="https://www.mayoclinic.org/healthy-lifestyle/tween-and-teen-health/in-depth/teens-and-social-media-use/art-20474437" target="_blank" rel="noopener">
+            <div class="resource-tag">Health</div>
+            <h3>Mayo Clinic: Teens and Social Media Use — What's the Impact?</h3>
+            <p>A medical perspective on the risks and benefits of social media for teens.</p>
+            <span class="resource-link">Visit resource →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WORKS CITED ===================== -->
+    <section class="section section-alt" id="works-cited">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">11 — Sources</p>
+          <h2>Works Cited</h2>
+          <p class="section-lede">All sources are listed in MLA format.</p>
+        </div>
+        <div class="citations">
+          <p class="citation">
+            Twenge, Jean M. <em>iGen: Why Today's Super-Connected Kids Are Growing Up Less Rebellious,
+            More Tolerant, Less Happy—and Completely Unprepared for Adulthood</em>. Atria Books, 2017.
+          </p>
+          <p class="citation">
+            "Social Media and Youth Mental Health." <em>U.S. Surgeon General</em>, 2023,
+            <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html" target="_blank" rel="noopener">www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html</a>.
+          </p>
+          <p class="citation">
+            Vogels, Emily A., Risa Gelles-Watnick, and Navid Massarat. "Teens, Social Media and Technology 2022."
+            <em>Pew Research Center</em>, 10 Aug. 2022,
+            <a href="https://www.pewresearch.org/internet/2022/08/10/teens-social-media-and-technology-2022/" target="_blank" rel="noopener">www.pewresearch.org/internet/2022/08/10/teens-social-media-and-technology-2022/</a>.
+          </p>
+        </div>
+
+        <div class="image-credits">
+          <h3>Image Credits</h3>
+          <p>Hero photograph and supporting imagery sourced from free stock libraries on Pexels and Unsplash. MLA-style image citations:</p>
+          <ul class="citations-list">
+            <li class="citation">
+              "Teenager Phone." <em>Pexels</em>,
+              <a href="https://www.pexels.com/search/teenager%20phone/" target="_blank" rel="noopener">www.pexels.com/search/teenager%20phone/</a>. Accessed 2026.
+            </li>
+            <li class="citation">
+              "Social Media for Teens." <em>Pexels</em>,
+              <a href="https://www.pexels.com/search/social%20media%20for%20teens/" target="_blank" rel="noopener">www.pexels.com/search/social%20media%20for%20teens/</a>. Accessed 2026.
+            </li>
+            <li class="citation">
+              "Teenager Phone." <em>Unsplash</em>,
+              <a href="https://unsplash.com/s/photos/teenager-phone" target="_blank" rel="noopener">unsplash.com/s/photos/teenager-phone</a>. Accessed 2026.
+            </li>
+            <li class="citation">
+              "Teenager Social Media." <em>Unsplash</em>,
+              <a href="https://unsplash.com/s/photos/teenager-social-media" target="_blank" rel="noopener">unsplash.com/s/photos/teenager-social-media</a>. Accessed 2026.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">How Social Media Impacts Teen Mental Health</p>
+        <p class="footer-sub">A high school English final project on what we wish we had learned in school about using social media in a healthier way.</p>
+      </div>
+      <div class="footer-meta">
+        <p>Created by <strong>Dresden Cook</strong></p>
+        <p>English Final Project · <span id="year"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js?v=2" defer></script>
+</body>
+</html>
